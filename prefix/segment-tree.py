@@ -34,7 +34,7 @@ class SegmentTree:
             if pos < l or pos > r:
                 return
             self.t[i] += delta
-            if l != r:
+            if l != r: # stop here if current node is leaf
                 m = (l + r) // 2
                 _update(2 * i + 1, l, m)
                 _update(2 * i + 2, m + 1, r)
